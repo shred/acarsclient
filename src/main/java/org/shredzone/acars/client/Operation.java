@@ -1,0 +1,161 @@
+package org.shredzone.acars.client;
+
+/**
+ * Enumeration of available operations.
+ *
+ * @author Richard "Shred" Körber
+ * @see <a href="http://www.acarsd.org/apitable.html">API Table</a>
+ */
+public enum Operation {
+    AS_WELCOME(1),
+    AS_BYE(2),
+    AS_CBYE(3),
+    AS_CONTACT(4),
+    AS_VOLUME(5),
+    AS_PUBPOST(6),
+    AS_PARITY(7),
+    AS_FETCH(9),
+    AS_PUBGET(10),
+    AS_DBINFO(11),
+    AS_SNDWINF(12),
+    AS_BROKEN(13),
+    AS_REG(14),
+    AS_RECH(15),
+    AS_RECHCNT(16),
+    AS_FLIGHT(17),
+    AS_HIT2(18),
+    AS_TXTREP(19),
+    AS_HSTATS(20),
+    AS_REPDIS(21),
+    AS_REPSIZE(22),
+    AS_REPNAME(23),
+    AS_RECHCNTC(24),
+    AS_CRCON(25),
+    AS_CRCOFF(26),
+    AS_LASTCON(27),
+    AS_AFLIGHT(30),
+    AS_AAIRLINE(31),
+    AS_ATYPE(32),
+    AS_AAIRPORT(33),
+    AS_AMODE(34),
+    AS_ADDED(35),
+    AS_NOTADDED(36),
+    AS_TUPDATE(37),
+    AS_AFTYPE(38),
+    AS_XML(40),
+    AS_WELXML(41),
+    AS_OVRPASS(42),
+    AS_WELSTR(43),
+    AS_MAILRET(44),
+    AS_ACCMAIL(45),
+    AS_STOPMAIL(46),
+    AS_MAILIN(47),
+    AS_MAILOK(48),
+    AS_MAILREJ(49),
+    AS_CCLIENT(50),
+    AS_CMESS(51),
+    AS_CON(52),
+    AS_COFF(53),
+    AS_CINFO(54),
+    AS_CNOOP(55),
+    AS_CUSER(56),
+    AS_CNCHNG(57),
+    AS_SREJ(58),
+    AS_SUBSTATE(59),
+    AS_SUBSCR(60),
+    AS_UNSUBSCR(61),
+    AS_ACTIVATE(62),
+    AS_PAUSED(63),
+    AS_REPINFO(64),
+    AS_NOSUBSC(65),
+    AS_SETTYPE(66),
+    AS_GETTT(67),
+    AS_NOTT(68),
+    AS_TTCNTC(69),
+    AS_ANADREP(70),
+    AS_AREPST(71),
+    AS_AREPBUSY(72),
+    AS_AREPFAIL(73),
+    AS_AREPCNTC(74),
+    AS_NOPAGER(75),
+    AS_PAGEBLOCK(76),
+    AS_PAGERADD(77),
+    AS_PAGEROK(78),
+    AS_PAGERERR(79),
+    AS_NEEDPWD(80),
+    AS_ENABLE(81),
+    AS_ENOK(82),
+    AS_ENERR(83),
+    AS_IDENTIFY(85),
+    AS_IDENTOK(86),
+    AS_IDENTUK(87),
+    AS_PAGERDEL(88),
+    AS_ADMINMSG(90),
+    AS_FREQ(91),
+    AS_IMGFLW(92),
+    AS_PAGEREMP(93),
+    AS_UPLINKS(95),
+    AS_CONTENT(98),
+    AS_ROUTE(99),
+    AS_BUSY(100),
+    AS_CLIENT(101),
+    AS_SHUTDWN(102),
+    AS_ACARSD(103),
+    AS_RECHERR(104),
+    AS_NOREP(105),
+    AS_NOUPD(106),
+    AS_BADMSG(107),
+    AS_ABERR(108),
+    AS_IMPADD(110),
+    AS_IMPDEL(111),
+    AS_IMPADDR(112),
+    AS_IMPDELR(113),
+    AS_MAILUNK(114),
+    AS_NOIMP(115),
+    AS_GETLIST(116),
+    AS_LISTSND(117),
+    AS_LICENSE(118),
+    AS_GETDAILY(130),
+    AS_NODAILY(131),
+    AS_DAILY(132),
+    AS_FLEETLST(135),
+    AS_FLEETNO(136),
+    AS_FLEETDMP(137),
+    AS_HEART(148),
+    AS_HEARTOK(149),
+    AS_USECOMP(151),
+    AS_ALIVE2(153),
+    AS_PROXYWT(160),
+    AS_USEPROXY(162),
+    AS_TIMESW(169),
+    AS_GCUSER(170),
+    AS_GCMESS(171),
+    AS_GCON(172),
+    AS_GCOFF(173),
+    AS_BINARY(200),
+    AS_COMPR(201),
+    AS_TRANST(202),
+    AS_SIMAGE(203),
+    AS_CXML(204),
+    AS_AREPSND(205);
+
+    private final int value;
+
+    private Operation(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public static Operation findOperation(int value) {
+        for (Operation op : values()) {
+            if (op.getValue() == value) {
+                return op;
+            }
+        }
+        return null;
+    }
+
+}
